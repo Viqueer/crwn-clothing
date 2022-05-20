@@ -1,8 +1,9 @@
 import React from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
-import HomePage from "./pages/homepage/HomePage"
-import ShopPage from './pages/shoppage/ShopPage';
 import Header from './components/Header';
+import HomePage from "./pages/home-page/HomePage"
+import ShopPage from './pages/shop-page/ShopPage';
+import SignInAndSignUpPage from './pages/signin-and-signup-page/SignInAndSignUpPage';
 import "./app.scss"
 
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage/> }/>
         <Route  path="/shop" element={<ShopPage/>}/>
+        <Route  path="/signin" element={<SignInAndSignUpPage/>}/>
       </Routes>
     </div>
   );
