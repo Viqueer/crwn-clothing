@@ -275,3 +275,20 @@ a{
   }
 
 }
+
+.sign-in-and-sign-up{
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.sign-up{
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+  .title{
+    margin: 10px 0px;
+  }
+}
