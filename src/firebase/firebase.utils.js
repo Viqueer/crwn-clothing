@@ -23,6 +23,7 @@ const app = initializeApp(firebaseConfig); //initialize the firebase app
 const db = getFirestore(app); //initialize the db
 export const auth = getAuth(app);
 
+//sign in with google config
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => signInWithPopup(auth,provider);
