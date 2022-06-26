@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/home-page/HomePage";
 import ShopPage from "./pages/shop-page/ShopPage";
 import SignInAndSignUpPage from "./pages/signin-and-signup-page/SignInAndSignUpPage";
+import Checkout from "./pages/checkout/Checkout";
 import "./app.scss";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
@@ -42,7 +43,8 @@ class App extends React.Component {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route exact path="/signin" element={this.props.currentUser ? (<Navigate to="/" replace/>) : (<SignInAndSignUpPage/>)} />
+          <Route exact path="/checkout" element={<Checkout />}/>
+          <Route exact path="/signin" element={this.props.currentUser ? (<Navigate to="/" replace />) : (<SignInAndSignUpPage />)} />
         </Routes>
       </div>
     );
