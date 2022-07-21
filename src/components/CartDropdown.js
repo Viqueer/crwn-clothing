@@ -1,4 +1,4 @@
-import CustomButton from "./CustomButton";
+import CustomButton from "./custom-button/CustomButton";
 import CartItem from "./CartItem";
 import { connect } from "react-redux";
 import { selectCartItems } from "../redux/cart/cartSelectors";

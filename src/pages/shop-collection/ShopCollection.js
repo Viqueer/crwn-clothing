@@ -1,4 +1,4 @@
-import CollectionItem from "../../components/CollectionItem";
+import CollectionItem from "../../components/collection-item/CollectionItem";
 import { connect } from "react-redux";
 import { selectCollection } from "../../redux/shop/shopSelectors";
 import { useParams } from "react-router-dom";

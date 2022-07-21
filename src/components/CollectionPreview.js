@@ -1,5 +1,5 @@
 import React from "react";
-import CollectionItem from "./CollectionItem";
+import CollectionItem from "./collection-item/CollectionItem";
 
 function CollectionPreview({title, items }) {
   return (
