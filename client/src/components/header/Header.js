@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "../CartIcon";
 import CartDropdown from "../CartDropdown";
