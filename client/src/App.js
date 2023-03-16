@@ -1,20 +1,19 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import Header from "./components/header/Header";
-import HomePage from "./pages/home-page/HomePage";
-import ShopPage from "./pages/shop-page/ShopPage";
 import SignInAndSignUpPage from "./pages/signin-and-signup-page/SignInAndSignUpPage";
-import Checkout from "./pages/checkout/Checkout";
 import "./app.scss";
 
-import {
-  auth,
-  createUserProfileDocument
-} from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { onSnapshot } from "firebase/firestore";
 
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/userActions";
+
+const HomePage = lazy(() => import("./pages/home-page/HomePage"));
+const ShopPage = lazy(() => import("./pages/shop-page/ShopPage"));
+const Checkout = lazy(() => import("./pages/checkout/Checkout"));
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -35,7 +34,6 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
-      
     });
   }
 
@@ -44,9 +42,33 @@ class App extends React.Component {
       <div>
         <Header />
         <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/shop/*" element={<ShopPage />} />
-          <Route exact path="/checkout" element={<Checkout />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <HomePage />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/shop/*"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <ShopPage />
+              </Suspense>
+            }
+          />
+          <Route
+            exact
+            path="/checkout"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Checkout />
+              </Suspense>
+            }
+          />
           <Route
             exact
             path="/signin"

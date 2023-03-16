@@ -49,13 +49,28 @@ export const CollectionItemContainer = styled.div`
       opacity: 0.8;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button{
+        opacity: unset ;
+      }
+    }
+  }
 `;
 
 export const ShopCustomButton = styled(CustomButton)`
   width: 70%;
   position: absolute;
   top: 255px;
-  ${ShopCustomButtonDefaultStyles};
+  @media screen and (min-width: 800px){
+    ${ShopCustomButtonDefaultStyles}; 
+  }
   ${CollectionItemContainer}:hover & {
     ${ShopCustomButtonHoverStyles};
   }

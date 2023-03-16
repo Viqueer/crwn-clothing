@@ -8,6 +8,10 @@ $font-family: "Encode Sans Condensed", sans-serif;
 body {
   font-family: $font-family;
   padding: 20px 60px;
+
+  @media screen and (max-width: 800px) {
+    padding: 10px;
+  } 
 }
 
 a {
@@ -89,6 +93,14 @@ a {
       font-size: 16px;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
+
+    &.large{
+      height: 200px;
+    }
+  }
 }
 
 .collection-preview {
@@ -105,7 +117,18 @@ a {
     display: flex;
     justify-content: space-between;
   }
-}
+
+  @media  screen and (max-width: 800px) {
+    align-items: center;
+
+    .preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+    }
+  }
+    
+  }
 
 @mixin shrinkLabel {
   top: -14px;
@@ -172,6 +195,11 @@ a {
     display: flex;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -180,6 +208,11 @@ a {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    width: unset;
+  }
 }
 
 .sign-up {
@@ -189,6 +222,11 @@ a {
 
   .title {
     margin: 10px 0px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-bottom: 40px;
   }
 }
 
@@ -372,6 +410,11 @@ a {
 
     & .collection-item {
       margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;  
     }
   }
 }
