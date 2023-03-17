@@ -14,7 +14,6 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   });
-
   const { displayName, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = async (e) => {
@@ -47,7 +46,7 @@ const SignUp = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserCredentials(...userCredentials, { [name]: value });
+    setUserCredentials({...userCredentials, [name]: value });
   };
 
   
