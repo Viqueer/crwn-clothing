@@ -1,6 +1,6 @@
 # CRWN Clothing
 
-CRWN Clothing is a mini e-commerce website built with react that offers a variety of clothing collections.
+CRWN Clothing is a mini e-commerce website built with react and firebase that offers a variety of clothing collections.
 
 ## Features
 
@@ -9,6 +9,7 @@ CRWN Clothing is a mini e-commerce website built with react that offers a variet
 - Working shopping cart with local storage persistence
 - Simulated checkout process using Stripe for payments
 - Ability to use dummy payment information for testing
+- Sign in with google account
 
 ## Installation
 
